@@ -38,7 +38,7 @@ __interrupt void second_button_interrupt()
             UCSCTL4 &= 0;
             UCSCTL5 &= 0;
 
-            UCSCTL4 |= SELM__DCOCLKDIV;
+            UCSCTL4 |= SELM__DCOCLK;
             UCSCTL5 |= DIVM__8;
         }
         clkEnabled = clkEnabled ? 0 : 1;
