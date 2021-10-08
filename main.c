@@ -91,8 +91,8 @@ int main(void) {
 
     UCSCTL1 |= DCORSEL_0;  // 0.07  - 1.7 MHz
 
-    UCSCTL2 |= FLLN1; // FLLN = 2
-    UCSCTL2 |= FLLD__1; // FLLD = 1
+    UCSCTL2 |= FLLN1|FLLN2|FLLN3; // FLLN = 14
+    UCSCTL2 |= FLLD__2; // FLLD = 2
 
     UCSCTL3 |= SELREF__REFOCLK;// FLLREFCLK = 32768
     UCSCTL3 |= FLLREFDIV__1; // FLLREFDIV = 1
@@ -100,8 +100,8 @@ int main(void) {
     UCSCTL4 |= SELM__DCOCLK;
     UCSCTL5 |= DIVM__8;
 
-    // 98000 = rllrefclk/fllrefdiv * (FLLN + 1) * FLLD
-    //98000 = 98300
+    // 980 000 = rllrefclk/fllrefdiv * (FLLN + 1) * FLLD
+    //980 000 = 983 040
 
     __no_operation();
 
